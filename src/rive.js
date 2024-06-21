@@ -12,6 +12,10 @@ const riveInstance = new rive.Rive({
 		riveInstance.resizeDrawingSurfaceToCanvas();
 
 		const inputs = riveInstance.stateMachineInputs(stateMachine);
+		isOn3 = inputs.find((i) => i.name === "isOn3"); // Event to setup
+		isOn4 = inputs.find((i) => i.name === "isOn4"); // Event to setup
+		isOn6 = inputs.find((i) => i.name === "isOn6"); // Event to setup
+		isOn8 = inputs.find((i) => i.name === "isOn8"); // Event to setup
 	},
 
 	onStateChange: (e) => {
@@ -43,6 +47,32 @@ const eventFire = (riveEvent) => {
 			break;
 		case "OnClick":
 			console.log("clicked");
+			break;
+
+		// Anim on lessons
+		case "On3":
+			isOn3.value = true;
+			break;
+		case "Off3":
+			isOn3.value = false;
+			break;
+		case "On4":
+			isOn4.value = true;
+			break;
+		case "Off4":
+			isOn4.value = false;
+			break;
+		case "On6":
+			isOn6.value = true;
+			break;
+		case "Off6":
+			isOn6.value = false;
+			break;
+		case "On8":
+			isOn8.value = true;
+			break;
+		case "Off8":
+			isOn8.value = false;
 			break;
 
 		default:
