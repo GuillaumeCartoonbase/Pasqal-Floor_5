@@ -1,7 +1,7 @@
-const stateMachine = "State Machine 1";
+const stateMachine = "Floor 5";
 
 const riveInstance = new rive.Rive({
-	src: "src/.riv", //get rive file
+	src: "src/floor-5.riv", //get rive file
 	canvas: document.getElementById("rive"), //get correct canvas
 	autoplay: true,
 	stateMachines: stateMachine, // get correct stateMachine
