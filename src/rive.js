@@ -12,10 +12,6 @@ const riveInstance = new rive.Rive({
 		riveInstance.resizeDrawingSurfaceToCanvas();
 
 		const inputs = riveInstance.stateMachineInputs(stateMachine);
-		// myInput = inputs.find((i) => i.name === inputName);
-		// myInput.value = true;
-
-		// riveInstance.setTextRunValue(textRun, newString);
 	},
 
 	onStateChange: (e) => {
@@ -41,8 +37,3 @@ const eventFire = (riveEvent) => {
 };
 
 riveInstance.on(rive.EventType.RiveEvent, eventFire);
-
-// Nested inputs setup
-//riveInstance.setNumberStateAtPath(inputName, number, path)
-//riveInstance.setBooleanStateAtPath(inputName, boolean, path)
-//riveInstance.fireStateAtPath(inputName, path)
