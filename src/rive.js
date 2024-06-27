@@ -19,7 +19,7 @@ const riveInstance = new rive.Rive({
 	},
 
 	onStateChange: (e) => {
-		console.log(e.data[0]); // Get the current timeline name
+		// console.log(e.data[0]); // Get the current timeline name
 	},
 });
 
@@ -37,7 +37,7 @@ const eventFire = (riveEvent) => {
 	const eventData = riveEvent.data;
 	const eventName = eventData.name;
 	const eventProperties = eventData.properties;
-	console.log(eventName);
+	// console.log(eventName);
 	switch (eventName.split("-")[0]) {
 		case "OnHoverEnter":
 			document.body.style.cursor = "pointer";
