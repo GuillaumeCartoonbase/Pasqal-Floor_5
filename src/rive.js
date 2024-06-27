@@ -41,6 +41,7 @@ const lessons = 9; // Number of lessons
 const inputLessonsDone = []; // Lessons status
 const inputLessonsProgress = []; // Lessons progress
 const inputIsLessonsHover = []; // Lesson pointer hover
+const inputLessonsTrigger = []; // Lesson trigger movement
 
 // Handle the onLoad event
 function onLoadHandler() {
@@ -80,6 +81,12 @@ function onLoadHandler() {
 			inputs.find((input) => input.name === `Lesson ${i} Hover`)
 		);
 		// inputIsLessonsHover[0].value = true;
+
+		// Triggers marble animation
+		inputLessonsTrigger.push(
+			inputs.find((input) => input.name === `Trigger Lesson ${i}`)
+		);
+		// inputLessonsTrigger[0].fire()
 	}
 }
 
