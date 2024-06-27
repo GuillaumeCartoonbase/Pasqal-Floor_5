@@ -7,7 +7,6 @@ const riveInstance = new rive.Rive({
 	stateMachines: stateMachine, // get correct stateMachine
 	automaticallyHandleEvents: true, // Automatically handle RiveHTTPEvents
 	onLoad: onLoadHandler,
-	onStateChange: onStateChangeHandler,
 });
 
 // Animation status mapping
@@ -57,12 +56,6 @@ function onLoadHandler() {
 	playerSelector.value = playerID;
 
 	inputMarbleHover = inputs.find((i) => i.name === "marble hovering");
-}
-
-// Handle the onStateChange event
-function onStateChangeHandler(e) {
-	// Custom logic for state change
-	// console.log(e.data[0]); // Get curent timeline name
 }
 
 // Resize the drawing surface if the window resizes
