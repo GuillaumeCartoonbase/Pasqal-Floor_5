@@ -88,6 +88,8 @@ function onLoadHandler() {
 		);
 		// inputLessonsTrigger[0].fire()
 	}
+	// Trigger marble to next level
+	triggerNextLevel = inputs.find((i) => i.name === "Trigger Next Level");
 }
 
 // Resize the drawing surface if the window resizes
