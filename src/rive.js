@@ -16,6 +16,8 @@ const riveInstance = new rive.Rive({
 		isOn4 = inputs.find((i) => i.name === "isOn4"); // Event to setup
 		isOn6 = inputs.find((i) => i.name === "isOn6"); // Event to setup
 		isOn8 = inputs.find((i) => i.name === "isOn8"); // Event to setup
+
+		inputMarbleHover = inputs.find((i) => i.name === "marble hovering");
 	},
 
 	onStateChange: (e) => {
@@ -73,6 +75,14 @@ const eventFire = (riveEvent) => {
 			break;
 		case "Off8":
 			isOn8.value = false;
+			break;
+
+		// Levitate marble when on a lesson, not in movement
+		case "marbleLevitateON":
+			inputMarbleHover.value = true;
+			break;
+		case "marbleLevitateOFF":
+			inputMarbleHover.value = false;
 			break;
 
 		default:
