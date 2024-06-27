@@ -65,6 +65,18 @@ Movement to the Next Level:
 triggerNextLevel.fire();
 ```
 
+Web example
+
+```html
+<div onclick="card1click()"></div>
+```
+
+```js
+const card1click = () => {
+	inputLessonsTrigger[0].fire(); // fire trigger lesson 1
+};
+```
+
 ### Hover
 
 Example to setup a hover effect on the lessons from web
