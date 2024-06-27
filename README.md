@@ -29,3 +29,21 @@ To set a specific progress percentage for a lesson, adjust the `inputLessonsProg
 ```js
 inputLessonsProgress[0].value = 50;
 ```
+
+### Triggers
+
+#### Launching a Lesson or Next Level
+
+To launch a specific lesson or the next level, you can use the following commands:
+
+Movement to Lesson 1:
+
+```javascript
+inputLessonsTrigger[0].fire();
+```
+
+Movement to the Next Level:
+
+```javascript
+triggerNextLevel.fire();
+```
