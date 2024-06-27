@@ -64,3 +64,21 @@ Movement to the Next Level:
 ```javascript
 triggerNextLevel.fire();
 ```
+
+### Hover
+
+Example to setup a hover effect on the lessons from web
+Use `inputIsLessonsHover[i]` to select the lesson.
+
+```html
+<div onmouseenter="cardHover(0)" onmouseleave="cardNoHover(0)"></div>
+```
+
+```js
+const cardHover = (index) => {
+	inputIsLessonsHover[index].value = true;
+};
+const cardNoHover = (index) => {
+	inputIsLessonsHover[index].value = false;
+};
+```
