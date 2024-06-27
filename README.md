@@ -94,3 +94,32 @@ const cardNoHover = (index) => {
 	inputIsLessonsHover[index].value = false;
 };
 ```
+
+### Events
+
+Events return an object
+(booleans, integrers and strings can be used as value)
+
+Used in a
+
+```js
+const eventFire = (riveEvent) => {
+	const eventKey = eventName.split("-")[0];
+	switch (eventKey) {
+		case "OnHoverEnter":
+			document.body.style.cursor = "pointer";
+			break;
+		case "OnHoverExit":
+			document.body.style.cursor = "auto";
+			break;
+}
+```
+
+#### Lessons events
+
+```js
+LessonEvent1 = { lesson: 1 };
+LessonEvent2 = { lesson: 2 };
+(...)
+NextLevelButton = { level: 2 };
+```
