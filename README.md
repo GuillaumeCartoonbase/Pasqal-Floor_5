@@ -8,6 +8,23 @@
 
 ## rive.js
 
+### Player Status
+
+To change the marble's color depending on the user profile.
+(integrer, 0-3)
+
+- `0` : Standard marble
+- `1` : Blue marble
+- `2` : Red marble
+- `3` : Green marble
+
+Variable to edit in js: `playerID`
+
+```js
+playerSelector = inputs.find((i) => i.name === "playerProfile");
+playerSelector.value = playerID;
+```
+
 ### Lesson Status
 
 #### Setting a Lesson as Done
