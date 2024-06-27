@@ -37,6 +37,9 @@ const animationMapping = {
 	},
 };
 
+const lessons = 9; // Number of lessons
+const inputLessonsDone = []; // Lessons status
+
 // Handle the onLoad event
 function onLoadHandler() {
 	// Prevent a blurry canvas by using the device pixel ratio
@@ -56,6 +59,14 @@ function onLoadHandler() {
 	playerSelector.value = playerID;
 
 	inputMarbleHover = inputs.find((i) => i.name === "marble hovering");
+
+	for (let i = 1; i <= lessons; i++) {
+		// Get lesson done status
+		inputLessonsDone.push(
+			inputs.find((input) => input.name === `isLesson${i}Done`)
+		);
+		// inputLessonsDone[0].value = true;
+	}
 }
 
 // Resize the drawing surface if the window resizes
