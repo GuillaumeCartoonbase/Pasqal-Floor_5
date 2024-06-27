@@ -48,7 +48,7 @@ const eventFire = (riveEvent) => {
 			document.body.style.cursor = "auto";
 			break;
 		case "OnClick":
-			console.log("clicked");
+			// console.log("clicked");
 			break;
 
 		// Anim on lessons
