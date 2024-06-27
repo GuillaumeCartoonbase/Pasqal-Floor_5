@@ -51,6 +51,11 @@ function onLoadHandler() {
 	isOn6 = inputs.find((i) => i.name === "isOn6");
 	isOn8 = inputs.find((i) => i.name === "isOn8");
 
+	// Change marble's color [0, 1 , 2, 3]
+	let playerID = 0; // Var to change player
+	playerSelector = inputs.find((i) => i.name === "playerProfile");
+	playerSelector.value = playerID;
+
 	inputMarbleHover = inputs.find((i) => i.name === "marble hovering");
 }
 
