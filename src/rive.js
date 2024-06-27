@@ -6,28 +6,11 @@ const riveInstance = new rive.Rive({
 	autoplay: true,
 	stateMachines: stateMachine, // get correct stateMachine
 	automaticallyHandleEvents: true, // Automatically handle RiveHTTPEvents
-
-	onLoad: () => {
-		// Prevent a blurry canvas by using the device pixel ratio
-		riveInstance.resizeDrawingSurfaceToCanvas();
-
-		const inputs = riveInstance.stateMachineInputs(stateMachine);
-
-		// Build anim status
-		isOn3 = inputs.find((i) => i.name === "isOn3");
-		isOn4 = inputs.find((i) => i.name === "isOn4");
-		isOn6 = inputs.find((i) => i.name === "isOn6");
-		isOn8 = inputs.find((i) => i.name === "isOn8");
-
-		inputMarbleHover = inputs.find((i) => i.name === "marble hovering");
-	},
-
-	onStateChange: (e) => {
-		// console.log(e.data[0]); // Get the current timeline name
-	},
+	onLoad: onLoadHandler,
+	onStateChange: onStateChangeHandler,
 });
 
-// Build anim status
+// Animation status mapping
 const animationMapping = {
 	On3: () => {
 		isOn3.value = true;
@@ -55,6 +38,28 @@ const animationMapping = {
 	},
 };
 
+// Handle the onLoad event
+function onLoadHandler() {
+	// Prevent a blurry canvas by using the device pixel ratio
+	riveInstance.resizeDrawingSurfaceToCanvas();
+
+	const inputs = riveInstance.stateMachineInputs(stateMachine);
+
+	// Build anim status
+	isOn3 = inputs.find((i) => i.name === "isOn3");
+	isOn4 = inputs.find((i) => i.name === "isOn4");
+	isOn6 = inputs.find((i) => i.name === "isOn6");
+	isOn8 = inputs.find((i) => i.name === "isOn8");
+
+	inputMarbleHover = inputs.find((i) => i.name === "marble hovering");
+}
+
+// Handle the onStateChange event
+function onStateChangeHandler(e) {
+	// Custom logic for state change
+	// console.log(e.data[0]); // Get curent timeline name
+}
+
 // Resize the drawing surface if the window resizes
 window.addEventListener(
 	"resize",
@@ -69,7 +74,6 @@ const eventFire = (riveEvent) => {
 	const eventData = riveEvent.data;
 	const eventName = eventData.name;
 	const eventProperties = eventData.properties;
-	// console.log(eventName);
 
 	const eventKey = eventName.split("-")[0];
 	switch (eventKey) {
@@ -80,7 +84,7 @@ const eventFire = (riveEvent) => {
 			document.body.style.cursor = "auto";
 			break;
 		case "OnClick":
-			// console.log("clicked");
+			// Custom logic for click event
 			break;
 
 		// Anim on lessons
@@ -92,7 +96,9 @@ const eventFire = (riveEvent) => {
 		case "Off4":
 		case "Off6":
 		case "Off8":
-			animationMapping[eventKey]();
+			if (animationMapping[eventKey]) {
+				animationMapping[eventKey]();
+			}
 			break;
 
 		// Levitate marble when on a lesson, not in movement
@@ -109,4 +115,5 @@ const eventFire = (riveEvent) => {
 	}
 };
 
+// Register the event handler
 riveInstance.on(rive.EventType.RiveEvent, eventFire);
