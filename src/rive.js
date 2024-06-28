@@ -90,49 +90,25 @@ const eventFire = (riveEvent) => {
 			break;
 
 		// Anim on lessons
-		case "On1":
-		case "On2":
-		case "On3":
-		case "On4":
-		case "On5":
-		case "On6":
-		case "On7":
-		case "On8":
-		case "On9":
-		case "Off1":
-		case "Off2":
-		case "Off3":
-		case "Off4":
-		case "Off5":
-		case "Off6":
-		case "Off7":
-		case "Off8":
-		case "Off9":
+		case "On":
+		case "Off":
 			const whereAmI = () => {
-				e = eventKey.slice(0, -1);
+				e = eventName.slice(0, -2);
 				if (e === "On") return true;
 				if (e === "Off") return false;
 				return false;
 			};
 
-			let lessonN = eventKey.slice(-1);
+			let lessonN = eventName.slice(-1);
 			riveInstance
 				.stateMachineInputs(stateMachine)
 				.find((i) => i.name === `isOn${lessonN}`).value = whereAmI();
 			break;
 
 		// Lesson launcher
-		case "LessonEvent1":
-		case "LessonEvent2":
-		case "LessonEvent3":
-		case "LessonEvent4":
-		case "LessonEvent5":
-		case "LessonEvent6":
-		case "LessonEvent7":
-		case "LessonEvent8":
-		case "LessonEvent9":
+		case "LessonEvent":
 		case "NextLevelButton":
-			console.log(eventKey);
+			console.log(eventName);
 			break;
 
 		// Levitate marble when on a lesson, not in movement
