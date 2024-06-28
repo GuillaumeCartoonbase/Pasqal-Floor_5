@@ -11,6 +11,18 @@ const riveInstance = new rive.Rive({
 
 // Animation status mapping
 const animationMapping = {
+	On1: () => {
+		isOn1.value = true;
+	},
+	Off1: () => {
+		isOn1.value = false;
+	},
+	On2: () => {
+		isOn2.value = true;
+	},
+	Off2: () => {
+		isOn2.value = false;
+	},
 	On3: () => {
 		isOn3.value = true;
 	},
@@ -23,17 +35,35 @@ const animationMapping = {
 	Off4: () => {
 		isOn4.value = false;
 	},
+	On5: () => {
+		isOn5.value = true;
+	},
+	Off5: () => {
+		isOn5.value = false;
+	},
 	On6: () => {
 		isOn6.value = true;
 	},
 	Off6: () => {
 		isOn6.value = false;
 	},
+	On7: () => {
+		isOn7.value = true;
+	},
+	Off7: () => {
+		isOn7.value = false;
+	},
 	On8: () => {
 		isOn8.value = true;
 	},
 	Off8: () => {
 		isOn8.value = false;
+	},
+	On9: () => {
+		isOn9.value = true;
+	},
+	Off9: () => {
+		isOn9.value = false;
 	},
 };
 
@@ -121,14 +151,24 @@ const eventFire = (riveEvent) => {
 			break;
 
 		// Anim on lessons
+		case "On1":
+		case "On2":
 		case "On3":
 		case "On4":
+		case "On5":
 		case "On6":
+		case "On7":
 		case "On8":
+		case "On9":
+		case "Off1":
+		case "Off2":
 		case "Off3":
 		case "Off4":
+		case "Off5":
 		case "Off6":
+		case "Off7":
 		case "Off8":
+		case "Off9":
 			if (animationMapping[eventKey]) {
 				animationMapping[eventKey]();
 			}
