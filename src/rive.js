@@ -10,62 +10,6 @@ const riveInstance = new rive.Rive({
 });
 
 // Animation status mapping
-const animationMapping = {
-	On1: () => {
-		isOn1.value = true;
-	},
-	Off1: () => {
-		isOn1.value = false;
-	},
-	On2: () => {
-		isOn2.value = true;
-	},
-	Off2: () => {
-		isOn2.value = false;
-	},
-	On3: () => {
-		isOn3.value = true;
-	},
-	Off3: () => {
-		isOn3.value = false;
-	},
-	On4: () => {
-		isOn4.value = true;
-	},
-	Off4: () => {
-		isOn4.value = false;
-	},
-	On5: () => {
-		isOn5.value = true;
-	},
-	Off5: () => {
-		isOn5.value = false;
-	},
-	On6: () => {
-		isOn6.value = true;
-	},
-	Off6: () => {
-		isOn6.value = false;
-	},
-	On7: () => {
-		isOn7.value = true;
-	},
-	Off7: () => {
-		isOn7.value = false;
-	},
-	On8: () => {
-		isOn8.value = true;
-	},
-	Off8: () => {
-		isOn8.value = false;
-	},
-	On9: () => {
-		isOn9.value = true;
-	},
-	Off9: () => {
-		isOn9.value = false;
-	},
-};
 
 const lessons = 9; // Number of lessons
 const inputLessonsDone = []; // Lessons status
@@ -79,12 +23,6 @@ function onLoadHandler() {
 	riveInstance.resizeDrawingSurfaceToCanvas();
 
 	const inputs = riveInstance.stateMachineInputs(stateMachine);
-
-	// Build anim status
-	isOn3 = inputs.find((i) => i.name === "isOn3");
-	isOn4 = inputs.find((i) => i.name === "isOn4");
-	isOn6 = inputs.find((i) => i.name === "isOn6");
-	isOn8 = inputs.find((i) => i.name === "isOn8");
 
 	// Change marble's color [0, 1 , 2, 3]
 	let playerID = 0; // Var to change player
@@ -139,6 +77,7 @@ const eventFire = (riveEvent) => {
 	const eventProperties = eventData.properties;
 
 	const eventKey = eventName.split("-")[0];
+
 	switch (eventKey) {
 		case "OnHoverEnter":
 			document.body.style.cursor = "pointer";
@@ -169,9 +108,17 @@ const eventFire = (riveEvent) => {
 		case "Off7":
 		case "Off8":
 		case "Off9":
-			if (animationMapping[eventKey]) {
-				animationMapping[eventKey]();
-			}
+			const whereAmI = () => {
+				e = eventKey.slice(0, -1);
+				if (e === "On") return true;
+				if (e === "Off") return false;
+				return false;
+			};
+
+			let lessonN = eventKey.slice(-1);
+			riveInstance
+				.stateMachineInputs(stateMachine)
+				.find((i) => i.name === `isOn${lessonN}`).value = whereAmI();
 			break;
 
 		// Levitate marble when on a lesson, not in movement
