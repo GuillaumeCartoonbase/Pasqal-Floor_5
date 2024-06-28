@@ -121,6 +121,20 @@ const eventFire = (riveEvent) => {
 				.find((i) => i.name === `isOn${lessonN}`).value = whereAmI();
 			break;
 
+		// Lesson launcher
+		case "LessonEvent1":
+		case "LessonEvent2":
+		case "LessonEvent3":
+		case "LessonEvent4":
+		case "LessonEvent5":
+		case "LessonEvent6":
+		case "LessonEvent7":
+		case "LessonEvent8":
+		case "LessonEvent9":
+		case "NextLevelButton":
+			console.log(eventKey);
+			break;
+
 		// Levitate marble when on a lesson, not in movement
 		case "marbleLevitateON":
 			inputMarbleHover.value = true;
