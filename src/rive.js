@@ -107,7 +107,7 @@ const eventFire = (riveEvent) => {
 
 		// Lesson launcher
 		case "LessonEvent":
-		case "NextLevelButton":
+		case "NextLevel":
 			console.log(eventName);
 			break;
 
@@ -125,14 +125,6 @@ const eventFire = (riveEvent) => {
 			break;
 		case "marbleLevitateOFF":
 			inputMarbleHover.value = false;
-			break;
-
-		case "cardbutton":
-			let cardButton = eventProperties.cardButton;
-			for (let i = 0; i < lessons; i++) {
-				if (cardButton === i + 1) return inputLessonsTrigger[i].fire();
-			}
-			if (cardButton === 200) return triggerNextLevel.fire();
 			break;
 
 		default:
