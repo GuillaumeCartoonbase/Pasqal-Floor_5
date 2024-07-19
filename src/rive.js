@@ -9,8 +9,6 @@ const riveInstance = new rive.Rive({
 	onLoad: onLoadHandler,
 });
 
-// Animation status mapping
-
 const lessons = 9; // Number of lessons
 const inputLessonsDone = []; // Lessons status
 const inputLessonsProgress = []; // Lessons progress
@@ -111,7 +109,7 @@ const eventFire = (riveEvent) => {
 			console.log(eventName);
 			break;
 
-		// Chnage index card
+		// Change index card
 		case "card":
 			riveInstance.setTextRunValue(
 				"lessonIndex",
