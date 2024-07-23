@@ -121,10 +121,6 @@ const eventFire = (riveEvent) => {
 
 		// Change index card
 		case "card":
-			riveInstance.setTextRunValue(
-				"lessonIndex",
-				eventName.slice(-1).toString()
-			);
 			break;
 
 		// Levitate marble when on a lesson, not in movement
