@@ -21,6 +21,7 @@ function onLoadHandler() {
 	// Prevent a blurry canvas by using the device pixel ratio
 	riveInstance.resizeDrawingSurfaceToCanvas();
 
+	// Get inputs
 	const inputs = riveInstance.stateMachineInputs(stateMachine);
 
 	// Change marble's color [0, 1 , 2, 3]
