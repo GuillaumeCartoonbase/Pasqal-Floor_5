@@ -48,7 +48,6 @@ function onLoadHandler() {
 		inputIsLessonsHover.push(
 			inputs.find((input) => input.name === `Lesson ${i} Hover`)
 		);
-		// inputIsLessonsHover[0].value = true;
 
 		// Triggers marble animation
 		inputLessonsTrigger.push(
