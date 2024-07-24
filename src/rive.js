@@ -50,10 +50,10 @@ function onLoadHandler() {
 		);
 
 		// Triggers marble animation
+		// inputLessonsTrigger[0].fire()
 		inputLessonsTrigger.push(
 			inputs.find((input) => input.name === `Trigger Lesson ${i}`)
 		);
-		// inputLessonsTrigger[0].fire()
 	}
 	// Trigger marble to next level
 	triggerNextLevel = inputs.find((i) => i.name === "Trigger Next Level");
