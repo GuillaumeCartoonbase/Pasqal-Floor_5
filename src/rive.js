@@ -92,16 +92,6 @@ const eventFire = (riveEvent) => {
 				return inputLessonsTrigger[eventIndex - 1].fire();
 			break;
 
-		case "OnHoverEnter":
-			document.body.style.cursor = "pointer";
-			break;
-		case "OnHoverExit":
-			document.body.style.cursor = "auto";
-			break;
-		case "OnClick":
-			// Custom logic for click event
-			break;
-
 		// Anim on lessons
 		case "On":
 			riveInstance.setBooleanStateAtPath(
@@ -142,6 +132,16 @@ const eventFire = (riveEvent) => {
 			break;
 		case "marbleLevitateOFF":
 			inputMarbleHover.value = false;
+			break;
+
+		case "OnHoverEnter":
+			document.body.style.cursor = "pointer";
+			break;
+		case "OnHoverExit":
+			document.body.style.cursor = "auto";
+			break;
+		case "OnClick":
+			// Custom logic for click event
 			break;
 
 		default:
