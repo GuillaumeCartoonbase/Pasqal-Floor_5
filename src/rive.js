@@ -128,10 +128,6 @@ const eventFire = (riveEvent) => {
 			console.log(eventName);
 			break;
 
-		// Change index card
-		case "card":
-			break;
-
 		case "OnHoverEnter":
 			document.body.style.cursor = "pointer";
 			break;
