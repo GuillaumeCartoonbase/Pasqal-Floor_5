@@ -39,10 +39,10 @@ function onLoadHandler() {
 		);
 
 		// Get lesson done status
+		// inputLessonsDone[0].value = true; (true, false)
 		inputLessonsDone.push(
 			inputs.find((input) => input.name === `isLesson${i}Done`)
 		);
-		// inputLessonsDone[0].value = true;
 
 		// Hover effect
 		inputIsLessonsHover.push(
