@@ -12,7 +12,6 @@ const riveInstance = new rive.Rive({
 const lessons = 9; // Number of lessons
 const inputLessonsStarted = []; // Lessons status
 const inputLessonsDone = []; // Lessons status
-const inputLessonsProgress = []; // Lessons progress
 const inputIsLessonsHover = []; // Lesson pointer hover
 const inputLessonsTrigger = []; // Lesson trigger movement
 
@@ -42,12 +41,6 @@ function onLoadHandler() {
 			inputs.find((input) => input.name === `isLesson${i}Done`)
 		);
 		// inputLessonsDone[0].value = true;
-
-		// Get lesson progress
-		inputLessonsProgress.push(
-			inputs.find((input) => input.name === `Lesson progress ${i}`)
-		);
-		// inputLessonsProgress[0].value = 0; // 0-100
 
 		// Hover effect
 		inputIsLessonsHover.push(
