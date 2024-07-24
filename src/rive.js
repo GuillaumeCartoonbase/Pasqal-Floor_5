@@ -92,7 +92,7 @@ const eventFire = (riveEvent) => {
 				return inputLessonsTrigger[eventIndex - 1].fire();
 			break;
 
-		// Anim on lessons
+		// logic when marble arrives
 		case "On":
 			inputMarbleHover.value = true;
 
@@ -106,6 +106,8 @@ const eventFire = (riveEvent) => {
 				.stateMachineInputs(stateMachine)
 				.find((i) => i.name === `isOn${eventIndex}`).value = true;
 			break;
+
+		// logic when marble leaves
 		case "Off":
 			inputMarbleHover.value = false;
 
