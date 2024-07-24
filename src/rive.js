@@ -94,6 +94,8 @@ const eventFire = (riveEvent) => {
 
 		// Anim on lessons
 		case "On":
+			inputMarbleHover.value = true;
+
 			riveInstance.setBooleanStateAtPath(
 				"lessonHover",
 				true,
@@ -105,6 +107,8 @@ const eventFire = (riveEvent) => {
 				.find((i) => i.name === `isOn${eventIndex}`).value = true;
 			break;
 		case "Off":
+			inputMarbleHover.value = false;
+
 			riveInstance.setBooleanStateAtPath(
 				"lessonHover",
 				false,
@@ -124,14 +128,6 @@ const eventFire = (riveEvent) => {
 
 		// Change index card
 		case "card":
-			break;
-
-		// Levitate marble when on a lesson, not in movement
-		case "marbleLevitateON":
-			inputMarbleHover.value = true;
-			break;
-		case "marbleLevitateOFF":
-			inputMarbleHover.value = false;
 			break;
 
 		case "OnHoverEnter":
