@@ -87,11 +87,9 @@ const eventFire = (riveEvent) => {
 	switch (eventKey) {
 		// Fire marble movements from card's buttons
 		case "cardbutton":
-			let cardButton = eventProperties.cardButton;
-			for (let i = 0; i < lessons; i++) {
-				if (cardButton === i + 1) return inputLessonsTrigger[i].fire();
-			}
-			if (cardButton === 200) return triggerNextLevel.fire();
+			if (eventName.split("-")[1] == "next") return triggerNextLevel.fire();
+			if (Number.isInteger(Number(eventIndex)))
+				return inputLessonsTrigger[eventIndex - 1].fire();
 			break;
 
 		case "OnHoverEnter":
