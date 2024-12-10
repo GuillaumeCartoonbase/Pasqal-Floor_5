@@ -13,6 +13,7 @@ const riveInstance = new rive.Rive({
 const lessons = 4; // Number of lessons
 const inputLessonsStarted = []; // Lessons status
 const lessonsDone = []; // Lessons status
+const haloLessonActive = []; // Lessons status
 const inputIsLessonsHover = []; // Lesson pointer hover
 const inputLessonsTrigger = []; // Lesson trigger movement
 
@@ -39,6 +40,10 @@ function onLoadHandler() {
 		);
 
 		// Get lesson done status
+		haloLessonActive.push(
+			inputs.find((input) => input.name === `isLesson${i}Done`)
+		);
+
 		// lessonsDone[0].value = true; (true, false)
 		lessonsDone.push(inputs.find((input) => input.name === `isLesson${i}Done`));
 
