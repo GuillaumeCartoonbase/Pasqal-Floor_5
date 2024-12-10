@@ -45,7 +45,9 @@ function onLoadHandler() {
 		);
 
 		// lessonsDone[0].value = true; (true, false)
-		lessonsDone.push(inputs.find((input) => input.name === `isLesson${i}Done`));
+		lessonsDone.push(
+			riveInstance.retrieveInputAtPath(`isDone${i}`, "compteur").asBool().value
+		);
 
 		// Hover effect
 		inputIsLessonsHover.push(
