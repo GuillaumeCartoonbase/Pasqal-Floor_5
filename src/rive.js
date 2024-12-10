@@ -162,7 +162,13 @@ riveInstance.on(rive.EventType.RiveEvent, eventFire);
 const lessonCounter = () => {
 	let total = 0;
 	for (let i = 0; i < lessons; i++) {
-		total += lessonsDone[i].value == true ? 1 : 0;
+		total += lessonsDone[i] == true ? 1 : 0;
 	}
-	return (inputLessonsCounter.value = total);
+
+	riveInstance.setTextRunValueAtPath(
+		"lessonsLearned",
+		total.toString(),
+		"compteur"
+	);
+	return total;
 };
