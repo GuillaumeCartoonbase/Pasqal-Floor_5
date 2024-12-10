@@ -137,10 +137,6 @@ const eventFire = (riveEvent) => {
 				false,
 				`Lesson ${eventIndex}`
 			);
-
-			riveInstance
-				.stateMachineInputs(stateMachine)
-				.find((i) => i.name === `isOn${eventIndex}`).value = false;
 			break;
 
 		// Lesson launcher
