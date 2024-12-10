@@ -64,6 +64,11 @@ function onLoadHandler() {
 	triggerNextLevel = inputs.find((i) => i.name === "Trigger Next Level");
 
 	inputLessonsCounter = inputs.find((i) => i.name === "lessonCounter");
+
+	responsiveShrink = inputs.find((i) => i.name === "responsiveShrink");
+
+	isResetting = inputs.find((i) => i.name === "isResetting");
+	isResetting.value = true;
 }
 
 // Resize the drawing surface if the window resizes
