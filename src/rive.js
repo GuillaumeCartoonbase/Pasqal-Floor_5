@@ -172,3 +172,11 @@ const lessonCounter = () => {
 	);
 	return total;
 };
+
+function lessonNdone(n, status) {
+	result = status;
+	riveInstance.setBooleanStateAtPath(`isDone${n}`, result, "compteur");
+	lessonsDone[n - 1] = result;
+	haloLessonActive[n - 1].value = result;
+	lessonCounter();
+}
