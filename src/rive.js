@@ -139,12 +139,6 @@ const eventFire = (riveEvent) => {
 			);
 			break;
 
-		// Lesson launcher
-		case "LessonEvent":
-		case "NextLevel":
-			console.log(eventName);
-			break;
-
 		case "OnHoverEnter":
 			document.body.style.cursor = "pointer";
 			break;
@@ -156,7 +150,7 @@ const eventFire = (riveEvent) => {
 			break;
 
 		default:
-			console.log("Unhandled event:", eventName, "\n", riveEvent);
+			console.log("Unhandled event:", eventName);
 			break;
 	}
 };
