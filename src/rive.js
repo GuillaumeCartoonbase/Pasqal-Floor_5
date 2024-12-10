@@ -135,11 +135,13 @@ const eventFire = (riveEvent) => {
 		case "Off":
 			inputMarbleHover.value = false;
 
-			riveInstance.setBooleanStateAtPath(
-				"lessonHover",
-				false,
-				`Lesson ${eventIndex}`
-			);
+			if (eventIndex != 0) {
+				riveInstance.setBooleanStateAtPath(
+					"lessonHover",
+					false,
+					`Lesson ${eventIndex}`
+				);
+			}
 
 			isMoving(true);
 			break;
@@ -189,7 +191,5 @@ function lessonNdone(n, status) {
 function isMoving(status) {
 	inputs = riveInstance.stateMachineInputs(stateMachine);
 	move = inputs.find((i) => i.name === "isMoving");
-	console.log(status);
-
 	return (move.value = status);
 }
