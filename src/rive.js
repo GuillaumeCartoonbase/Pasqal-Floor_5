@@ -10,7 +10,7 @@ const riveInstance = new rive.Rive({
 	onLoad: onLoadHandler,
 });
 
-const lessons = 9; // Number of lessons
+const lessons = 4; // Number of lessons
 const inputLessonsStarted = []; // Lessons status
 const inputLessonsDone = []; // Lessons status
 const inputIsLessonsHover = []; // Lesson pointer hover
