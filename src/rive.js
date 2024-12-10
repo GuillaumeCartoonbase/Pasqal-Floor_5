@@ -128,11 +128,6 @@ const eventFire = (riveEvent) => {
 			);
 			break;
 
-			riveInstance
-				.stateMachineInputs(stateMachine)
-				.find((i) => i.name === `isOn${eventIndex}`).value = true;
-			break;
-
 		// logic when marble leaves
 		case "Off":
 			inputMarbleHover.value = false;
