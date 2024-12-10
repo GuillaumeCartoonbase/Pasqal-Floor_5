@@ -126,6 +126,7 @@ const eventFire = (riveEvent) => {
 				true,
 				`Lesson ${eventIndex}`
 			);
+			break;
 
 			riveInstance
 				.stateMachineInputs(stateMachine)
