@@ -69,6 +69,16 @@ function onLoadHandler() {
 
 	isResetting = inputs.find((i) => i.name === "isResetting");
 	isResetting.value = true;
+
+	// number of lesson checkers
+	riveInstance.setNumberStateAtPath("nLesson", lessons, "compteur");
+
+	// total lessons number
+	riveInstance.setTextRunValueAtPath(
+		"lessonsTotal",
+		lessons.toString(),
+		"compteur"
+	);
 }
 
 // Resize the drawing surface if the window resizes
