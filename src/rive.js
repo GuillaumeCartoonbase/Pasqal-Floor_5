@@ -86,6 +86,11 @@ const stopLoader = () => {
 	return riveInstance.fireStateAtPath("backTostart", "button start");
 };
 
+const shrink = (percent) => {
+	responsiveShrink.value = percent;
+	return responsiveShrink;
+};
+
 // Resize the drawing surface if the window resizes
 window.addEventListener(
 	"resize",
