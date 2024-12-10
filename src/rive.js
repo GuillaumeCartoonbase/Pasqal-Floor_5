@@ -81,6 +81,11 @@ function onLoadHandler() {
 	);
 }
 
+// Stop start button from loading in loop
+const stopLoader = () => {
+	return riveInstance.fireStateAtPath("backTostart", "button start");
+};
+
 // Resize the drawing surface if the window resizes
 window.addEventListener(
 	"resize",
