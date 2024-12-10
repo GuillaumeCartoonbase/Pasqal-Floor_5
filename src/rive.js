@@ -108,6 +108,7 @@ const eventFire = (riveEvent) => {
 
 	const eventKey = eventName.split("-")[0];
 	const eventIndex = eventName.slice(-1);
+	console.log(isMoving.value);
 
 	switch (eventKey) {
 		// Fire marble movements from card's buttons
@@ -126,6 +127,8 @@ const eventFire = (riveEvent) => {
 				true,
 				`Lesson ${eventIndex}`
 			);
+
+			isMoving(false);
 			break;
 
 		// logic when marble leaves
@@ -137,6 +140,8 @@ const eventFire = (riveEvent) => {
 				false,
 				`Lesson ${eventIndex}`
 			);
+
+			isMoving(true);
 			break;
 
 		case "OnHoverEnter":
@@ -179,4 +184,12 @@ function lessonNdone(n, status) {
 	lessonsDone[n - 1] = result;
 	haloLessonActive[n - 1].value = result;
 	lessonCounter();
+}
+
+function isMoving(status) {
+	inputs = riveInstance.stateMachineInputs(stateMachine);
+	move = inputs.find((i) => i.name === "isMoving");
+	console.log(status);
+
+	return (move.value = status);
 }
